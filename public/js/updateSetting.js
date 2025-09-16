@@ -5,9 +5,7 @@ import { addAlert, removeAlert } from './alert';
 export const updateMe = async (data, type) => {
   try {
     const link =
-      type === 'me'
-        ? 'http://127.0.0.1:3000/api/v1/users/updateMe'
-        : 'http://127.0.0.1:3000/api/v1/users/updatePassword';
+      type === 'me' ? '/api/v1/users/updateMe' : '/api/v1/users/updatePassword';
 
     const message =
       type === 'me'

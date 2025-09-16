@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const login = async (email, password) => {
   try {
-    const res = await axios.post('http://127.0.0.1:3000/api/v1/users/login', {
+    const res = await axios.post('/api/v1/users/login', {
       email,
       password,
     });
@@ -25,7 +25,7 @@ export const login = async (email, password) => {
 
 export const logout = async () => {
   try {
-    const logout = await axios.get('http://127.0.0.1:3000/api/v1/users/logout');
+    const logout = await axios.get('/api/v1/users/logout');
 
     if (logout.data.status === 'success') {
       addAlert('success', 'logged out successfully!');

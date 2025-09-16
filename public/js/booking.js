@@ -6,7 +6,7 @@ export const createBookingSession = async (tourId) => {
     console.log(tourId);
 
     const stripeLink = await axios.post(
-      `http://127.0.0.1:3000/api/v1/booking/checkout-session/${tourId}`,
+      `/api/v1/booking/checkout-session/${tourId}`,
     );
 
     location.assign(stripeLink.data.url);
