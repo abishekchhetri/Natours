@@ -6,7 +6,8 @@
   "author": "aviking",
   "type": "commonjs",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
+    "start:local": "nodemon server.js",
     "start:prod": "NODE_ENV=production nodemon server.js",
     "parcel:start": "parcel watch public/js/index.js --dist-dir public/js/dist",
     "parcel:build": "parcel build --no-optimize public/js/index.js --dist-dir public/js/dist ",
