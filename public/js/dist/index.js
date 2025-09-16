@@ -4587,7 +4587,7 @@ const $fe88969e812010fb$export$c8c497ba354ffdce = (status, message)=>{
 const $6f862145ad694b17$export$6741169286fa782c = async (tourId)=>{
     try {
         console.log(tourId);
-        const stripeLink = await (0, $53c1b9125021de64$export$2e2bcd8739ae039).post(`http://127.0.0.1:3000/api/v1/booking/checkout-session/${tourId}`);
+        const stripeLink = await (0, $53c1b9125021de64$export$2e2bcd8739ae039).post(`/api/v1/booking/checkout-session/${tourId}`);
         location.assign(stripeLink.data.url);
     } catch (err) {
         (0, $fe88969e812010fb$export$c8c497ba354ffdce)(error, err);
@@ -4602,7 +4602,7 @@ const $6f862145ad694b17$export$6741169286fa782c = async (tourId)=>{
 
 const $83b3af8716f6203b$export$596d806903d1f59e = async (email, password)=>{
     try {
-        const res = await (0, $53c1b9125021de64$export$2e2bcd8739ae039).post('http://127.0.0.1:3000/api/v1/users/login', {
+        const res = await (0, $53c1b9125021de64$export$2e2bcd8739ae039).post('/api/v1/users/login', {
             email: email,
             password: password
         });
@@ -4622,7 +4622,7 @@ const $83b3af8716f6203b$export$596d806903d1f59e = async (email, password)=>{
 };
 const $83b3af8716f6203b$export$a0973bcfe11b05c9 = async ()=>{
     try {
-        const logout = await (0, $53c1b9125021de64$export$2e2bcd8739ae039).get('http://127.0.0.1:3000/api/v1/users/logout');
+        const logout = await (0, $53c1b9125021de64$export$2e2bcd8739ae039).get('/api/v1/users/logout');
         if (logout.data.status === 'success') {
             (0, $fe88969e812010fb$export$c8c497ba354ffdce)('success', 'logged out successfully!');
             window.setTimeout(()=>{
@@ -4665,7 +4665,7 @@ const $cd51d635984bcf89$export$d49c9aa30b771d59 = (loca)=>{
 
 const $692cc511aa95aa6d$export$8ddaddf355aae59c = async (data, type)=>{
     try {
-        const link = type === 'me' ? 'http://127.0.0.1:3000/api/v1/users/updateMe' : 'http://127.0.0.1:3000/api/v1/users/updatePassword';
+        const link = type === 'me' ? '/api/v1/users/updateMe' : '/api/v1/users/updatePassword';
         const message = type === 'me' ? 'User updated successfully' : 'Password updated successfully';
         const user = await (0, $53c1b9125021de64$export$2e2bcd8739ae039).patch(link, data);
         user.data.status = 'success';
