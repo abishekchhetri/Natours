@@ -21,6 +21,7 @@ const createSendToken = (user, res, status) => {
     ),
     secure: true,
     httpOnly: true,
+    sameSite: 'none',
   };
   if (process.env.NODE_ENV === 'production') cookieOptions.secure = true;
 
